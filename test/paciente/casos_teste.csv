@@ -1,0 +1,11 @@
+ID, Campo,  Classe de Equivalência, Valor de Teste,   Esperado
+1,  CPF,    Válido,                 52998224725,      Válido
+2,  CPF,    Inválido,               12345678900,      Inválido
+3,  CPF,    Repetição de dígitos,   11111111111,      Inválido
+4,  Idade,  >= 18 anos,             2000-01-01,       Válido
+5,  Idade,  < 18 anos,              2010-01-01,       Inválido
+6,  Idade,  Limite de 18 anos,      [hoje - 18 anos], Válido
+7,  Nome,   Preenchido,             "João",           Válido
+8,  Nome,   Vazio,                  "",               Inválido
+9,  RG,     Preenchido,             "1234567",        Válido
+10, RG,     Vazio,                  "",               Inválido
