@@ -6,6 +6,8 @@ ID, Campo,  Classe de Equivalência, Valor de Teste,   Esperado
 5,  Idade,  < 18 anos,              2010-01-01,       Inválido
 6,  Idade,  Limite de 18 anos,      [hoje - 18 anos], Válido
 7,  Nome,   Preenchido,             "João",           Válido
-8,  Nome,   Vazio,                  "",               Inválido
-9,  RG,     Preenchido,             "1234567",        Válido
-10, RG,     Vazio,                  "",               Inválido
+8,  Nome,   Inválido,               "João123",        Inválido
+9,  Nome,   Vazio,                  "",               Inválido
+10, RG,     Válido,                 "1234567",        Válido
+11, RG,     Inválido,               "abc123",         Inválido
+12, RG,     Vazio,                  "",               Inválido

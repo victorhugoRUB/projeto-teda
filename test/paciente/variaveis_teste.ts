@@ -12,8 +12,10 @@ export const VARIAVEIS_TESTE = {
   })(),
 
   nome_preenchido: 'João',
+  nome_invalido: 'João123',
   nome_vazio: '',
 
-  rg_preenchido: '1234567',
+  rg_valido: '1234567',
+  rg_invalido: 'abc123',
   rg_vazio: '',
 };

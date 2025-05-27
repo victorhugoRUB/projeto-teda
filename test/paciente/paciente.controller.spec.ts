@@ -19,37 +19,27 @@ describe('PacienteController', () => {
         const result = controller.cadastrar({
             nome: VARIAVEIS_TESTE.nome_preenchido,
             cpf: VARIAVEIS_TESTE.cpf_valido,
-            rg: VARIAVEIS_TESTE.rg_preenchido,
+            rg: VARIAVEIS_TESTE.rg_valido,
             dataNascimento: VARIAVEIS_TESTE.maior_idade,
         });
         expect(result).toBe('Paciente cadastrado com sucesso');
+    });
+
+    it('não deve cadastrar paciente com nome inválido', () => {
+        const result = controller.cadastrar({
+            nome: VARIAVEIS_TESTE.nome_invalido,
+            cpf: VARIAVEIS_TESTE.cpf_valido,
+            rg: VARIAVEIS_TESTE.rg_valido,
+            dataNascimento: VARIAVEIS_TESTE.maior_idade,
+        });
+        expect(result).toBe('Dados inválidos');
     });
 
     it('não deve cadastrar paciente com nome vazio', () => {
         const result = controller.cadastrar({
             nome: VARIAVEIS_TESTE.nome_vazio,
             cpf: VARIAVEIS_TESTE.cpf_valido,
-            rg: VARIAVEIS_TESTE.rg_preenchido,
-            dataNascimento: VARIAVEIS_TESTE.maior_idade,
-        });
-        expect(result).toBe('Dados inválidos');
-    });
-
-    it('deve cadastrar paciente com RG preenchido', () => {
-        const result = controller.cadastrar({
-            nome: VARIAVEIS_TESTE.nome_preenchido,
-            cpf: VARIAVEIS_TESTE.cpf_valido,
-            rg: VARIAVEIS_TESTE.rg_preenchido,
-            dataNascimento: VARIAVEIS_TESTE.maior_idade,
-        });
-        expect(result).toBe('Paciente cadastrado com sucesso');
-    });
-
-    it('não deve cadastrar paciente com RG vazio', () => {
-        const result = controller.cadastrar({
-            nome: VARIAVEIS_TESTE.nome_preenchido,
-            cpf: VARIAVEIS_TESTE.cpf_valido,
-            rg: VARIAVEIS_TESTE.rg_vazio,
+            rg: VARIAVEIS_TESTE.rg_valido,
             dataNascimento: VARIAVEIS_TESTE.maior_idade,
         });
         expect(result).toBe('Dados inválidos');
